@@ -1,77 +1,140 @@
-"use client";
-import React from "react";
-import Slider from "react-slick";
+"use client"
+import React, { useEffect, useState } from "react";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CountUp from "react-countup/build/CountUp";
 
-const Page = () => {
-  var settings = {
-    arrows: false,
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-  };
-  return (
-    <>
-      <Slider {...settings}>
-        <div className="w-full h-full  lg:h-[550px] xl:h-[650px] lg:bg-contain cover  relative bg-no-repeat pb-5">
-          <div>
-            <div>
-              <div className="lg:absolute top-10 lg:pl-16 left-4">
-                <div className="flex flex-col gap-3 w-full  pt-10   lg:pt-0 lg:w-[90%] justify-center md:justify-start md:items-start items-center text-justify md:text-start lg:px-0 md:px-10 px-7">
-                  <p className="text-primarycolor font-semibold md:text-xl text-3xl lg:pt-6 ">
-                    WHO WE ARE
-                  </p>
-                  <p className="font-semibold sm:text-base text-sm md:text-3xl text-grayColor ">
-                    Empowering Your Digital Success - WHY Global Services
-                  </p>
-                  <p className=" text-sm  text-gray-500">
-                    We are an innovative IT company dedicated to transforming
-                    businesses through cutting-edge technology solutions. With a
-                    team of skilled professionals and a passion for excellence,
-                    we provide a comprehensive range of IT services tailored to
-                    meet the unique needs of our clients.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <div className="lg:absolute relative lg:w-[70%] w-full md:top-[65%] lg:top-[43%] xl:top-[40%]  md:left-0 pl-10 z-10">
-                  <div className="grid lg:grid-cols-4 grid-cols-2 p-2 justify-evenly">
-                    <div className="lg:w-[60%] w-[70%]">
-                      <img alt="" src="" />
-                      <p className="text-center flex flex-row justify-center gap-1 md:text-3xl text-xl font-semibold pt-4 text-gray-500">
-                        <CountUp
-                          start={0}
-                          end={100}
-                          duration={3}
-                          delay={0}
-                        />
-                        <p>+</p>
-                      </p>
-                      <p className="text-xs text-center text-gray-500">
-                      Reduction in IT costs for many of our clients
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+export default function Page(){
+    const [prev,setprev]=useState(0)
+    useEffect(()=>{
+        const interval=setInterval(()=>{
+           setprev(prev=>(prev+3+1)%3)
+
+        },6000)
+        return ()=>clearInterval(interval)
+    },[])
+    useEffect(()=>{
+        console.log(prev)
+    })
+    return(
+         
+       <div  className=" lg:h-screen md:h-[600px] h-[500px] w-full relative overflow-hidden">
+    <img src="/aigen.jpg" className="w-full h-full -z-10 absolute top-0 left-0 object-cover"></img>
+    <div className="bg-black bg-opacity-75 -z-10 absolute top-0 left-0 w-full h-full"></div>
+{prev==0&&<div className="w-full h-full flex gap-5 justify-center md:justify-between items-center px-5 md:px-10 2xl:px-16">
+        <div className="lg:w-[60%] h-full">
+            <div className="w-full flex  items-center  h-full">
+            <div className=" keys flex flex-col  md:justify-center justify-center md:items-start items-center space-y-10">
+             
+              <h1 className="text-white  md:text-4xl sm:text-2xl text-lg font-bold">
+              <p className="text-white font-bold md:text-start text-center text-sm py-3">Boost your brand with</p>
+                <div className="flex flex-col justify-center  md:items-start items-center gap-2"><span className="sha lg:text-6xl 2xl:text-8xl md:text-4xl sm:text-5xl lastwidth:text-4xl text-2xl">Digital Marketing</span> <span>Magic Today</span></div>
+              </h1>
+              <p className="bg-primary text-white font-semibold  px-8 py-3 rounded-md w-fit hover:bg-white duration-500 hover:text-black">Get a Quote</p>
             </div>
-            <div className="w-full h-full lg:block hidden bottom-0 tri absolute"></div>
-            <div className="w-full h-full bottom-0 left-0 shadow-lg whitetri absolute"></div>
-            <div className="absolute bottom-0 right-0  w-[45%] md:w-[40%] lg:w-[42%] z-10 lg:block hidden">
-              <img alt="" src="" />
+
             </div>
-            
-          </div>
         </div>
-      </Slider>
-    </>
-  );
-};
+        <div className="md:w-[40%] lg:w-[50%] md:block hidden images relative">
+            <div className="bg-primary w-48 h-48 absolute -z-10 -left-3 -top-3"></div>
+            <div className="bg-primary w-28 h-28 absolute -z-10 -right-3 -bottom-3"></div>
+            <img src="/digi.jpg" className="drop-shadow-xl object-cover  w-full md:h-[300px] h-[200px] lg:h-[380px] 2xl:h-[500px]"></img>
 
-export default Page;
+        </div>
+
+    </div>}
+{prev==1&&<div className="w-full h-full flex gap-5 justify-center md:justify-between items-center px-5 md:px-10 2xl:px-16">
+        <div className="lg:w-[60%] h-full">
+            <div className="w-full flex  items-center  h-full">
+            <div className=" keys flex flex-col  md:justify-center justify-center md:items-start items-center space-y-10">
+             
+              <h1 className="text-white  md:text-4xl sm:text-2xl text-lg font-bold">
+              <p className="text-white font-bold md:text-start text-center text-sm py-3">Transform your business with</p>
+                <div className="flex flex-col justify-center  md:items-start items-center gap-2"><span className="sha lg:text-6xl 2xl:text-8xl md:text-4xl sm:text-5xl lastwidth:text-4xl text-2xl">Web Development</span> <span>Excellence Today</span></div>
+              </h1>
+              <p className="bg-primary text-white  px-8 py-3 rounded-md w-fit hover:bg-white duration-500 hover:text-black">Get a Quote</p>
+            </div>
+
+            </div>
+        </div>
+        <div className="md:w-[40%] lg:w-[50%] md:block hidden images relative">
+            <div className="bg-primary w-48 h-48 absolute -z-10 -left-3 -top-3"></div>
+            <div className="bg-primary w-28 h-28 absolute -z-10 -right-3 -bottom-3"></div>
+            <img src="/aigen.jpg" className="drop-shadow-xl object-cover  w-full md:h-[300px] h-[200px] lg:h-[380px] 2xl:h-[500px]"></img>
+
+        </div>
+
+    </div>}
+{prev==2&&<div className="w-full h-full flex gap-5 justify-center md:justify-between items-center px-5 md:px-10 2xl:px-16">
+        <div className="lg:w-[60%] h-full">
+            <div className="w-full flex  items-center  h-full">
+            <div className=" keys flex flex-col  md:justify-center justify-center md:items-start items-center space-y-10">
+             
+              <h1 className="text-white  md:text-4xl sm:text-2xl text-lg font-bold">
+              <p className="text-white font-bold md:text-start text-center text-sm py-3">Transforming Ideas into Visual Masterpieces</p>
+                <div className="flex flex-col justify-center  md:items-start items-center gap-2"><span className="sha lg:text-6xl 2xl:text-8xl md:text-4xl sm:text-5xl lastwidth:text-4xl text-2xl">Graphic Design</span> <span>Empowering Business</span></div>
+              </h1>
+              <p className="bg-primary  text-white px-8 py-3 rounded-md w-fit hover:bg-white duration-500 hover:text-black">Get a Quote</p>
+            </div>
+
+            </div>
+        </div>
+        <div className="md:w-[40%] lg:w-[50%] md:block hidden images relative">
+            <div className="bg-primary w-48 h-48 absolute -z-10 -left-3 -top-3"></div>
+            <div className="bg-primary w-28 h-28 absolute -z-10 -right-3 -bottom-3"></div>
+            <img src="/grap.jpg" className="drop-shadow-xl object-cover  w-full md:h-[300px] h-[200px] lg:h-[380px] 2xl:h-[500px]"></img>
+
+        </div>
+
+    </div>}
+{/* {prev==1&&<div className="w-full h-full flex  items-center px-10">
+        <div className="lg:w-[60%] h-full">
+            <div className="w-full flex justify-center items-center  h-full">
+            <div className=" keys space-y-10">
+             
+              <h1 className="text-white  md:text-5xl text-xl font-bold">
+              <p className="text-white font-bold text-sm py-1">For Millions of Users</p>
+                <span className="sha text-7xl ">Web Development</span> Empowering Business
+              </h1>
+              <button className="bg-primary buttons p-3 px-8 rounded-md w-fit hover:bg-white duration-500 hover:text-black">Get a Quote</button>
+            </div>
+
+            </div>
+        </div>
+        <div className="lg:w-[40%] images relative">
+            <div className="bg-primary w-48 h-48 absolute -z-10 -left-3 -top-3"></div>
+            <div className="bg-primary w-28 h-28 absolute -z-10 -right-3 -bottom-3"></div>
+            <img src="/banner.webp" className="drop-shadow-xl h-[350px]  w-full"></img>
+
+        </div>
+
+    </div>}
+{prev==2&&<div className="w-full h-full flex lg:flex-row flex-col justify-center items-center px-10">
+        <div className="lg:w-[60%] h-full">
+            <div className="w-full flex  items-center  h-full">
+            <div className="keys space-y-10">
+             
+              <h1 className="text-white  md:text-5xl text-xl font-bold">
+              <p className="text-white font-bold text-sm py-1">For Millions of Users</p>
+                <div className="flex flex-col">
+                <span className="sha text-7xl ">Digital Marketing</span> <span>Empowering Business</span>
+                </div>
+              </h1>
+              <button className="bg-primary buttons p-3 px-8 rounded-md w-fit hover:bg-white duration-500 hover:text-black">Get a Quote</button>
+            </div>
+
+            </div>
+        </div>
+        <div className="lg:w-[40%] relative images">
+            <div className="bg-primary w-48 h-48 absolute -z-10 -left-3 -top-3"></div>
+            <div className="bg-primary w-28 h-28 absolute -z-10 -right-3 -bottom-3"></div>
+            <img src="/banner.webp" className="drop-shadow-xl h-[350px]  w-full"></img>
+
+        </div>
+
+    </div>} */}
+    
+</div>
+        
+    )
+}

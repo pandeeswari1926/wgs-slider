@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Page = () => {
+export default function Page(){
   var settings = {
     arrows: false,
     dots: true,
@@ -26,10 +26,10 @@ const Page = () => {
             className="absolute w-full h-full object-cover"
           />
           <div className="absolute w-full h-full bg-black bg-opacity-75 text-center lg:gap-0 gap-5 flex flex-col justify-center items-center ">
-            <div className="space-y-7">
+            <div className="space-y-5">
               <h1 className="text-white font-bold text-sm">For Millions of Users</h1>
               <h1 className="text-white  md:text-5xl text-xl font-bold">
-                <span className="sha">Transforming Lives, </span> One Smile at a Time
+                <span className="sha">Transforming Lives</span>,One Smile at a Time
               </h1>
               <button className="bg-white p-3 px-8 rounded-md w-fit hover:bg-primary duration-500 hover:text-white">Get a Quote</button>
             </div>
@@ -43,7 +43,7 @@ const Page = () => {
             className="absolute w-full h-full object-cover"
           />
           <div className="absolute w-full h-full bg-black bg-opacity-75 text-center lg:gap-0 gap-5 flex flex-col justify-center items-center ">
-            <div className="space-y-7">
+            <div className="space-y-5">
               <h1 className="text-white font-bold text-sm">For Millions of Users</h1>
               <h1 className="text-white  md:text-5xl text-xl font-bold">
                 <span className="sha">At the heart of everything we do,</span> 
@@ -60,4 +60,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+
