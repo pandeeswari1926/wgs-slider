@@ -15,6 +15,9 @@ const config: Config = {
         "bg1":"./banner.webp",
         "bg2":"./banner2.webp",
       },
+      colors:{
+        primary:"#FF9315",
+      }
     },
   },
   plugins: [],

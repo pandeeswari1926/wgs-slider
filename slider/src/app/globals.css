@@ -31,3 +31,7 @@ body {
     text-wrap: balance;
   }
 }
+.sha{
+  -webkit-text-stroke: 1px #FF9315;
+  color: transparent;
+}
