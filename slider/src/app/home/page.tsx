@@ -12,8 +12,8 @@ const Page = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoPlay: true,
-    autoPlaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
   return (
     <>
@@ -32,8 +32,8 @@ const Page = () => {
               </h1>
               <button className="bg-white p-3 px-8 rounded-md w-fit hover:bg-primary duration-500 hover:text-white">Get a Quote</button>
             </div>
-            <div className="lg:w-1/2 lg:block hidden">
-                <img src="/ai.jpg" alt="" />
+            <div className="lg:w-1/2 lg:block hidden px-10">
+                <img src="image2.png" alt="" className="w-full h-full"/>
             </div>
           </div>
 
@@ -52,8 +52,8 @@ const Page = () => {
               <p className="text-white text-sm font-bold leading-loose">GET A HEAD START WITH FREE DOMAIN & HOSTING LIMITED TIME OFFER, DON'T MISS OUT!</p>
               <button className="bg-white p-3 px-8 rounded-md w-fit hover:bg-primary duration-500 hover:text-white">Get a Quote</button>
             </div>
-            <div className="lg:w-1/2 lg:block hidden">
-                <img src="/ai.jpg" alt="" />
+            <div className="lg:w-1/2 lg:block hidden px-10">
+                <img src="/image1.png" alt="" className="w-full h-full"/>
             </div>
           </div>
         </div>
