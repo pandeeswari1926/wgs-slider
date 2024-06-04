@@ -3,7 +3,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CountUp from "react-countup/build/CountUp";
+import CountUp from "react-countup";
 
 const Page = () => {
   var settings = {
@@ -21,10 +21,10 @@ const Page = () => {
       <Slider {...settings}>
         <div className="w-full h-full  lg:h-[550px] xl:h-[650px] lg:bg-contain cover  relative bg-no-repeat pb-5">
           <div>
-            <div>
+            <div className="w-1/2">
               <div className="lg:absolute top-10 lg:pl-16 left-4">
                 <div className="flex flex-col gap-3 w-full  pt-10   lg:pt-0 lg:w-[90%] justify-center md:justify-start md:items-start items-center text-justify md:text-start lg:px-0 md:px-10 px-7">
-                  <p className="text-primarycolor font-semibold md:text-xl text-3xl lg:pt-6 ">
+                  <p className="text-primary font-semibold md:text-xl text-3xl lg:pt-6 ">
                     WHO WE ARE
                   </p>
                   <p className="font-semibold sm:text-base text-sm md:text-3xl text-grayColor ">
@@ -61,12 +61,9 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full h-full lg:block hidden bottom-0 tri absolute"></div>
-            <div className="w-full h-full bottom-0 left-0 shadow-lg whitetri absolute"></div>
-            <div className="absolute bottom-0 right-0  w-[45%] md:w-[40%] lg:w-[42%] z-10 lg:block hidden">
-              <img alt="" src="" />
+            <div className="w-1/2 absolute">
+              <img src="/banner2.webp" alt="" />
             </div>
-            
           </div>
         </div>
       </Slider>
