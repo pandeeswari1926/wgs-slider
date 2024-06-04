@@ -13,3 +13,47 @@
   -webkit-text-stroke: 1px #FF9315;
   color: transparent;
 }
+.keys{
+  animation: slides 0.8s ease-in-out;
+}
+
+@keyframes slides {
+  0% { transform: translateX(-50px); 
+   filter: blur(5px);
+  }
+  100%{
+    transform: translateX(0px);
+    filter: blur(0px);
+  }
+  
+}
+
+.buttons{
+  animation: buttonsed 0.5s ease-in-out;
+}
+@keyframes buttonsed {
+  0% { transform: translateY(20px);
+    opacity: 0.5;
+
+  
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  
+}
+.images{
+  animation: images 0.5s ease-in-out;
+}
+@keyframes images {
+  0% { transform: translateX(50px); 
+   filter: blur(5px);
+  }
+  100%{
+    transform: translateX(0px);
+    filter: blur(0px);
+  }
+  
+}

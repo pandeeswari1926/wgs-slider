@@ -15,6 +15,14 @@ const config: Config = {
         "bg1":"./banner.webp",
         "bg2":"./banner2.webp",
       },
+      screens: {
+        "xs": '431px',
+        "xs2": '530px',
+        "leawidth":"320px",
+        "lastwidth":'350px',
+        'largewidth':'1050px',
+        'largelast':'1100px',
+      },
       colors:{
         primary:"#FF9315",
       }
